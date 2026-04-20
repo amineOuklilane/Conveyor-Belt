@@ -8,7 +8,7 @@ Our Target in this project is to make a detector that detects objects running on
 
 ## Hardware
 
-![Idea_Object Detector](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/43a98878-a10f-4490-8124-b4db6dd9fac8)
+![Idea_Object Detector](Circuit-Diagram.png)
 
 ## Block Diagram
 
