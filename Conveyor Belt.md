@@ -12,7 +12,7 @@ Our Target in this project is to make a detector that detects objects running on
 
 ## Block Diagram
 
-![IR_BLOCK_DIAGRAM](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/044369d4-b92c-492b-a292-eb22ccbd8983)
+![IR_BLOCK_DIAGRAM](<img width="2232" height="1339" alt="Circuit-Diagram" src="https://github.com/user-attachments/assets/41834281-3f85-4d83-9c5d-20876588a72b" />)
 
 ## Working Principle
 
