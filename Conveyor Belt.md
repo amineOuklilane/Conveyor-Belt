@@ -526,9 +526,6 @@ Note: Usually, the vertical metal layer and horizontal metal layer values will b
 
 ![Screenshot from 2023-11-15 10-53-17](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/c3a07837-cdcd-4931-ab9e-d346edc50246)
 
-![Screenshot from 2023-11-18 12-32-10](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/0ff023c5-cec2-4071-ad6f-936bd1f2913f)
-
-![Screenshot from 2023-11-15 10-54-03](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/56085393-4238-4637-bada-1885d5685d17)
 
 * Here, in Floorplan we can analyse the Die area, Core area, Number of Endcap and Tap cells and also the Number of voltage sources added
 
@@ -543,9 +540,6 @@ $ magic -T /home/solanki-pratikkumar/.volare/volare/sky130/versions/1341f54f5ce0
 
 ![Screenshot from 2023-11-18 13-24-42](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/1cb212c0-976d-42b6-ba33-8407d92e3690)
 
-![Screenshot from 2023-11-18 13-26-42](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/77b9c07b-6e19-47d4-b8b0-ad2b1008b80b)
-
-![Screenshot from 2023-11-18 13-44-13](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/b146d548-c3f2-468b-9a77-3f46e7aa1622)
 
 * Over here we can observe the wrapper of the floorplan with tapcell and data_mem and inst_mem block vacant and ready for further process to get the placement cells
   
@@ -571,7 +565,6 @@ logic, Swapping pins, Deleting buffers, Moving instances, Applying useful skew, 
   
 ![Screenshot from 2023-11-14 16-04-54](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/7808df5b-ae58-4f79-b4d6-a59d1c4964bc)
   
-![Screenshot from 2023-11-14 16-05-10](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/c9215fb0-576d-4246-a080-98f4570d4bd9)
 
 
 **Placement_Report**
@@ -590,9 +583,6 @@ logic, Swapping pins, Deleting buffers, Moving instances, Applying useful skew, 
 
 ![Screenshot from 2023-11-18 15-46-50](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/5e127378-1c6d-4d0c-be1c-899a892c1552)
 
-![Screenshot from 2023-11-18 15-31-09](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/004681d1-87cd-4804-b938-a00410a9b6c4)
-
-![Screenshot from 2023-11-18 15-36-56](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/52ffd654-7490-4e57-804d-84752cfa6261)
 
 ## Clock Tree Synthesis(CTS):
 
@@ -641,9 +631,6 @@ magic -T /home/solanki-pratikkumar/.volare/volare/sky130/versions/1341f54f5ce0c4
 
 ![Screenshot from 2023-11-14 20-28-33](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/4b788cd0-a895-4ed1-ad74-3bf99fe191f8)
 
-![Screenshot from 2023-11-18 18-35-00](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/cb9d4f89-9d1f-4340-9615-53fe851cbb42)
-
-![Screenshot from 2023-11-18 18-40-04](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/7cc92cc5-6aea-4256-ab70-9a953f746c22)
 
 
 **Routing_Report** 
@@ -693,14 +680,6 @@ run_magic_drc
 run_antenna_check
 ```
 
-![Screenshot from 2023-11-14 16-05-54](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/6e213d89-bdef-4d23-80e1-f85b6e7fb2c7)
-
-![Screenshot from 2023-11-14 16-25-02](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/a57dc5ae-bec4-4a1c-82c1-a66f9e619dab)
-
-
-## Runs Folder 
-
-https://iiitbac-my.sharepoint.com/:f:/g/personal/solanki_pratikkumar_iiitb_ac_in/EtlDFc0uvV1Mglrv_FZIR70BGGnBbyo5gUHmoT9rewXXzQ?e=MezLpU
 
 
 ## Output Photo
@@ -712,21 +691,7 @@ https://iiitbac-my.sharepoint.com/:f:/g/personal/solanki_pratikkumar_iiitb_ac_in
 ![Screenshot from 2023-12-09 15-21-50](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/e92229fc-97a4-49d0-886b-35ca7c4bb87d)
 
 
-## Final Presentation Video
 
-https://iiitbac-my.sharepoint.com/:f:/g/personal/solanki_pratikkumar_iiitb_ac_in/EtlDFc0uvV1Mglrv_FZIR70BGGnBbyo5gUHmoT9rewXXzQ?e=jiDvpn
-
-## Word of Thanks
-
-* I sincerely Thank Prof.Kunal Gosh(Founder/VSD) and also Mr. Mayank Kabra (Founder Chipcron Pvt.Ltd) for Teaching and Helping me to complete this course smoothly
-
-## Acknowledgement
-
-* Kunal Ghosh, VSD Corp. Pvt. Ltd.
-* Mayank Kabra, Founder Chipcron Pvt.Ltd
-* Bhargav DV, MS Colleague
-* Pruthvi Parate, MS Colleague
-* Nitesh Sharma, M.Tech Colleague
  
 ## References
 
