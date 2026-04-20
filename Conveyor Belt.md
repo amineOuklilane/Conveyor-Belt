@@ -1,5 +1,5 @@
 
-# RISC-V CONVEYOR BELT OBJECT DETECTOR
+# CONVEYOR BELT OBJECT DETECTOR
 
 
 ## Abstract
@@ -12,7 +12,7 @@ Our Target in this project is to make a detector that detects objects running on
 
 ## Block Diagram
 
-![IR_BLOCK_DIAGRAM](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/044369d4-b92c-492b-a292-eb22ccbd8983)
+![IR_BLOCK_DIAGRAM](Circuit-Diagram.png)
 
 ## Working Principle
 
@@ -397,7 +397,6 @@ gtkwave waveform.vcd
   
 ![Screenshot from 2023-11-02 19-16-37](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/9cbb1527-241c-4efc-918a-a7351979411c)
 
-![Screenshot from 2023-11-02 19-17-14](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/3a68d41e-4346-47eb-b9ec-6e9a012ae2b5)
 
 
 * Here secondly, we have taken input as 0 so the expected output must be '00' at pins 1 and 2 and we can verify that in the waveform led=0 and buzzer=0 for 0 input with write=1 and ID_instruction is running with clk which confirms the running of assembly language code of 004F7713 assembly code line of  "100a0:	004f7713  andi  a4,t5,4" which will and immediate values of 4 and t5 that will be store in a5
@@ -405,21 +404,15 @@ gtkwave waveform.vcd
 
 ![Screenshot from 2023-11-02 21-55-52](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/bfa425e0-45a4-4146-bfab-1edaa601ce19)
 
-![Screenshot from 2023-11-02 22-07-46](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/d9334d96-3bac-4619-ab57-1a903b2390c4)
-
-![Screenshot from 2023-11-02 19-17-14](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/b9f6d4c5-06d9-4daf-bee7-10107535412c)
-
 
 
 * Now, the third example shows that input gets low  to 0 but the output stays '11' for some delay and the instruction written over here is "FEF42023" from assembly code of " 100ac: fef42023 sw a5,-32(s0)" which stores the value -32 value in a5 register 
 ![Screenshot from 2023-11-02 19-32-38](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/ec442482-b922-4267-b41f-4873b77cce0a)
 
-![Screenshot from 2023-11-02 19-32-59](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/f140fad0-ac71-4de2-bd36-eb7177e4d515)
 
 * Similar example for before dumping "11" in the output which is ori instruction "006F6F13" which in assembly code written as " 10080:	006f6f13    ori	t5,t5,6" 
 ![Screenshot from 2023-11-02 20-20-32](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/b8a0379d-e391-4c80-b740-739990e27b2f)
 
-![Screenshot from 2023-11-02 20-20-52](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/7a12c6db-d5af-444f-9f6c-049213d50fef)
 
 
 * Similar, more code is example of assembly instruction "02f71063"  with assembly code running  line  "10078:  02f71063 bne  a4,a5,10098 <main+0x44>"
@@ -432,89 +425,6 @@ gtkwave waveform.vcd
 
 * Furthermore, the previously instantiated SRAM modules are adjusted from sky130_sram_2kbyte_1rw1r_32x256_8_data and sky130_sram_2kbyte_1rw1r_32x256_8_inst to sky130_sram_1kbyte_1rw1r_32x256_8 since the processor doesn't actually require 2k RAM.
 
-* The synthesis process is executed twice, once with writing_inst_done=1 and once with writing_inst_done=0, resulting in two netlists named synth_test.v and synth_processor.v, respectively.
-
-* When writing_inst_done=1, this implies that the UART is bypassed, preventing the .vcd file from consuming excessive storage space (over 20GB). Subsequently, gate-level simulation and verification are performed using the corresponding netlist.
-
-```
-yosys
-read_liberty -lib sky130_fd_sc_hd__tt_025C_1v80_256.lib 
-read_verilog processor.v 
-synth -top wrapper 
-dfflibmap -liberty sky130_fd_sc_hd__tt_025C_1v80_256.lib
-abc -liberty sky130_fd_sc_hd__tt_025C_1v80_256.lib
-write_verilog synth_processor.v
-```
-
-* Yosys Invoke and .lib file imported and verilog module instantiation:
-  
-![Screenshot from 2023-11-02 23-21-04](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/c9340e57-bdbd-4f57-a8cc-0859ed57d2c7)
-
-* Top module wrapper synthesis where we see generic cells and sky130 sram 2 cells
-  
-![Screenshot from 2023-11-02 23-22-15](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/9ad6f8ed-4ace-4d42-9760-da3e716e792c)
-
-* Mapping Flipflops using dfflibmap command in yosys:
-  
-![Screenshot from 2023-11-02 23-23-15](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/40bb10fc-5777-4a9e-a041-7b53ba69dcb4)
-
-* Mapping standard cells to sky130 cells using ABC command in yosys:
-  
-![Screenshot from 2023-11-02 23-24-19](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/6b0252c5-bc21-439a-b8f2-fd67e0f68fbb)
-
-*  Executing Verilog synth_test files and Dumping all modules:
-  
-![Screenshot from 2023-11-02 23-25-20](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/f27ecb72-5f90-4f6c-b095-650a91509d5f)
-
-* Before conducting gate-level simulation using the synthesized netlist, certain modifications are implemented in the synthesized netlist file.
-* Before the synthesis stage, we had altered the instantiation names of the SRAM module to align them with the standard cells. sky130_sram_1kbyte_1rw1r_32x256_8_inst and sky130_sram_1kbyte_1rw1r_32x256_8_data, since the module definition is present in that file.
-  
-![Screenshot from 2023-11-03 00-24-58](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/5167042a-59e4-4303-92db-7a4c6247f8b5)
-
-* The sky130_sram_1kbyte_1rw1r_32x256_8.v file, we replace the memory instructions with the processor instructions obtained from the processor.v file
-  
-![Screenshot from 2023-11-02 23-53-51](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/f485cdcf-9c9d-468b-9984-025f330a4bf0)
-
-
-* Command to run Gate Level Simulation:
-  
-```
-iverilog -o synth_processor.v testbench.v synth_test.v sky130_sram_1kbyte_1rw1r_32x256_8.v sky130_fd_sc_hd.v primitives.v
-
-./syth_test.v
-```
-
-![Screenshot from 2023-11-02 23-54-16](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/136cc239-08e8-4be1-adb1-da860b0c9b0c)
-
-* GLS Output Waveform Generation:
-
-![Screenshot from 2023-11-03 00-03-25](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/43e83ba0-e521-4a16-be07-3392fb1f1253)
-
-![Screenshot from 2023-11-03 00-04-10](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/ef92802b-528f-4ff0-b1da-498a62ce896e)
-
-* Also we can observe the ID_instruction running in synthesis stage
-  
-![Screenshot from 2023-11-03 00-04-58](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/44b0c928-7e78-4908-a231-880574dcc777)
-
-* We generate the netlist by using the following commands
-   
-```
-show wrapper
-```
-
-![Screenshot from 2023-11-03 00-12-54](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/6b16ee9c-da8e-4f1c-9138-f2ad6a4ea4e4)
-
-![Screenshot from 2023-11-03 00-13-32](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/03f60251-c602-41eb-bcd7-e48d0e3101cf)
-
-
-## Physical Design,Place and Route(PNR)
-
-* The Physical Design Place and Route (PNR) flow in ASIC design is a critical process that transforms the synthesized netlist into a physically implementable design on the target chip. Here is a brief description of the PNR flow as Floorplan, Static Timing Analysis (STA), Power Planning, Placement, 
-Clock Tree Synthesis (CTS), Routing
-
-![PD-Flow](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/960ff35b-5c04-46c4-9806-93b842c317dc)
-
-![asic_flow](https://github.com/SolankiPratikkumar/IIITB_PRATIKKUMAR_ASIC/assets/140999250/2d9f48f7-c515-49c3-97fb-4f90612865e1)
 
 Below are the stages and the respective tools that are called by Openlane for the functionalities as described:
 
